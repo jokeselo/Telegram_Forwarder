@@ -110,7 +110,7 @@ def username(message):
        message.reply_text("💹Your Trx wallet set to")
         
     else:
-    message.reply_text("⚠️ It's Not a Valid Username!")
+    message.reply_text("⚠️ Its Not a Valid Username!")
 
    except:
         message.reply_text("This command having error pls wait for ficing the glitch by admin")
