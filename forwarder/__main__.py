@@ -88,13 +88,19 @@ def Add(update: Update, _):
     else:
         message.reply_text(Register_TEXT,
        parse_mode=ParseMode.HTML)
-  return
 
-    if message.text == "@":
-      message.reply_text(
+def rep(update: Update, _):
+    chat = update.effective_chat
+    message = update.effective_message
+
+    if not chat.type == "private":
+        message.reply_text("Contact me via Pm For Details To Register.")
+    else:
+        message.reply_text(
             Username,
             parse_mode=ParseMode.HTML,
         )
+      
 
 def main():
     start_handler = CommandHandler(
@@ -107,11 +113,16 @@ def main():
     Add_handler = CommandHandler(
         "Add",Add,run_async=True
     )
+
+  rep_handler = CommandHandler(
+        "@", rep,run_async=True
+    )
     
 
     dispatcher.add_handler(start_handler)
     dispatcher.add_handler(help_handler)
     dispatcher.add_handler(Add_handler)
+    dispatcher.add_handler(rep_handler)
 
 
     if WEBHOOK and URL:
