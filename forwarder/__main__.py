@@ -107,8 +107,7 @@ def main():
 def username(message):
    try:
     if len(message.text) == 5:
-       message.reply_text("💹Your Trx wallet set to
-        ,parse_mode="Markdown")
+       message.reply_text("💹Your Trx wallet set to")
         
     else:
     message.reply_text("⚠️ It's Not a Valid Username!")
