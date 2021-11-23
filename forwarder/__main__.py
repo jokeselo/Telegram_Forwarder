@@ -28,8 +28,8 @@ Plan Starting From 15k
 To obtain a list of plan , use /help.
 """
 
-Register_TEXT = """
-For Registering New Channel Use This Bot If You Register And Approved Then This Bot Will Add Views Automatically
+Register_TEXT
+For Registering New Channel Use This Bot 📲 @Register_Fajis_views_Bot
 """
 
 PM_HELP_TEXT = """
