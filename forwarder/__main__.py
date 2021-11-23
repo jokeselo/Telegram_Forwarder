@@ -108,13 +108,7 @@ def username(message):
    try:
     if len(message.text) == 5:
        message.reply_text("💹Your Trx wallet set to")
-        
-    else:
-    message.reply_text("⚠️ Its Not a Valid Username!")
-    except:
-        message.reply_text("This command having error pls wait for ficing the glitch by admin")
-        message.reply_text(1613808789, "Your bot got an error fix it fast!\n Error on command: "+message.text)
-        return
+
 
     if WEBHOOK and URL:
         LOGGER.info("Using webhooks.")
