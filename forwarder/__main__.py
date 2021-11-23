@@ -113,8 +113,7 @@ def main():
     Add_handler = CommandHandler(
         "Add",Add,run_async=True
     )
-
-      @_handler = CommandHandler(
+    rep_handler = CommandHandler(
         "@", rep,run_async=True
     )
     
