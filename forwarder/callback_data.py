@@ -1,6 +1,6 @@
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram import ParseMode, Update
-from telegram.ext import Client, Filters
+from pyrogram import Client
 
 Pm = """hello"""
 
