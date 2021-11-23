@@ -26,13 +26,14 @@ For Access Click /Register
 
 Plan Starting From 15k 
 To obtain a list of plan , use /help.
-""
-"
+"""
+
 Register_TEXT = """
 Please Enter Your Channel Username For Registration
-""""
 
-Note : Before Request For Register Should Be Pay The Plan Charge"""
+Note : Before Request For Register Should Be Pay The Plan Charge
+"""
+
 PM_HELP_TEXT = """
 <b>Here is a list of plans:</b>
 
