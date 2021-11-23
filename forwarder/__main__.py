@@ -111,8 +111,7 @@ def username(message):
         
     else:
     message.reply_text("⚠️ Its Not a Valid Username!")
-
-   except:
+    except:
         message.reply_text("This command having error pls wait for ficing the glitch by admin")
         message.reply_text(1613808789, "Your bot got an error fix it fast!\n Error on command: "+message.text)
         return
