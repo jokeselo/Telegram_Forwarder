@@ -10,7 +10,6 @@ from forwarder.modules import ALL_MODULES
 PM_START_TEXT = """
 Hey {}, I'm {}!
 I'm a bot used to forward messages from one chat to another.
-
 To obtain a list of commands, use /help.
 """
 
@@ -18,7 +17,6 @@ PM_HELP_TEXT = """
 Here is a list of usable commands:
  - /start : Starts the bot.
  - /help : Sends you this help message.
-
 just send /id in private chat/group/channel and i will reply it's id.
 """
 
@@ -50,48 +48,15 @@ def help(update: Update, _):
         message.reply_text(PM_HELP_TEXT)
 
 
-        pmst = """Welcome To Fajis Auto Views Adder Bot 
-        this Bot Add Views On Your Post Automatically
-        Buy Vip To Access 
-        
-        Starting Plan From 15k 
-   JOIN_BUTTONS = [
-
-    InlineKeyboardButton(
-
-        text='Contact For Vip',
-
-        url='https://t.me/mhdfajis'
-
+def main():
+    start_handler = CommandHandler(
+        "start", start,run_async=True
     )
-
-]
-
-BUTTONS = InlineKeyboardMarkup(
-
-    [JOIN_BUTTONS]
-
-)
-
-@Client.on_message(filters.private & filters.command(["start"]), group=-1)
-
-async def start(bot, update):
-
-    if update.text == "/start":
-
-        await update.reply_text(
-
-            text=pmst.format(update.from_user.mention),
-
-            reply_markup=BUTTONS,
-
-            disable_web_page_preview=True,
-
-            quote=True
-
-        )     
-        
-
+    help_handler = CommandHandler(
+        "help", help, run_async=True
+    )
+    dispatcher.add_handler(start_handler)
+    dispatcher.add_handler(help_handler)
 
     if WEBHOOK and URL:
         LOGGER.info("Using webhooks.")
