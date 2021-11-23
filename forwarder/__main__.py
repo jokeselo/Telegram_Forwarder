@@ -29,9 +29,7 @@ To obtain a list of plan , use /help.
 """
 
 Register_TEXT = """
-Please Enter Your Channel Username For Registration
-
-Note : Before Request For Register Should Be Pay The Plan Charge
+For Registering New Channel Use This Bot If You Register And Approved Then This Bot Will Add Views Automatically
 """
 
 PM_HELP_TEXT = """
@@ -89,19 +87,6 @@ def Add(update: Update, _):
         message.reply_text(Register_TEXT,
        parse_mode=ParseMode.HTML)
 
-def rep(update: Update, _):
-    chat = update.effective_chat
-    message = update.effective_message
-
-    if not chat.type == "private":
-        message.reply_text("Contact me via Pm For Details To Register.")
-    else:
-        message.reply_text(
-            Username,
-            parse_mode=ParseMode.HTML,
-        )
-      
-
 def main():
     start_handler = CommandHandler(
         "start", start,run_async=True
@@ -113,9 +98,7 @@ def main():
     Add_handler = CommandHandler(
         "Add",Add,run_async=True
     )
-    rep_handler = CommandHandler(
-        "@", rep,run_async=True
-    )
+    
     
 
     dispatcher.add_handler(start_handler)
