@@ -88,14 +88,13 @@ def Add(update: Update, _):
     else:
         message.reply_text(Register_TEXT,
        parse_mode=ParseMode.HTML)
+  return
+
     if message.text == "@":
       message.reply_text(
             Username,
             parse_mode=ParseMode.HTML,
         )
-    else:
-        message.reply_text("I'm up and running!")
-
 
 def main():
     start_handler = CommandHandler(
