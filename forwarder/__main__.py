@@ -90,9 +90,7 @@ def Add(update: Update, _):
        parse_mode=ParseMode.HTML)
 @forward.on_message(filters.private & filters.forwarded)
 if message.forward_from_chat["type"] == "channel":
-def @(update: Update, _):
-    
-    message = update.effective_message
+  message = update.effective_message
       message.reply_text(
             Username,
             parse_mode=ParseMode.HTML,
