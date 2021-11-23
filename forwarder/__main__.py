@@ -9,26 +9,29 @@ from forwarder.modules import ALL_MODULES
 
 JOIN_BUTTONS = [
     InlineKeyboardButton(
-        text='Register',
-        callback_data='/register'
+        text='Contact For More Help',
+        url='https://t.me/mhdfajis'
     )
 ]
 
 BUTTONS = InlineKeyboardMarkup(
     [JOIN_BUTTONS]
 )
-
 PM_START_TEXT = """
 Hey {}, I'm {}!
 
 I'm a bot used to add Views On All Upcoming Posts Of A Channel.
 
-For Access Click Register Button
+For Access Click /Register 
 
 Plan Starting From 15k 
 To obtain a list of plan , use /help.
-"""
+""
+"
+Register_TEXT = """
+Please Enter Your Channel Username For Registration
 
+Note : Before Request For Register Should Be Pay The Plan Charge"""
 PM_HELP_TEXT = """
 <b>Here is a list of plans:</b>
 
@@ -65,10 +68,20 @@ def help(update: Update, _):
     message = update.effective_message
 
     if not chat.type == "private":
-        message.reply_text("Contact me via PM to get a list of usable commands.")
+        message.reply_text("Contact me via PM Ti Get Details.")
     else:
         message.reply_text(PM_HELP_TEXT,
        reply_markup=BUTTONS,
+       parse_mode=ParseMode.HTML)
+
+def Register(update: Update, _):
+    chat = update.effective_chat
+    message = update.effective_message
+
+    if not chat.type == "private":
+        message.reply_text("Contact me via Pm For Details To Register.")
+    else:
+        message.reply_text(Register_TEXT,
        parse_mode=ParseMode.HTML)
 
 
@@ -79,8 +92,14 @@ def main():
     help_handler = CommandHandler(
         "help", help, run_async=True
     )
+
+Register_handler = CommandHandler(
+        "Register",Register,run_async=True
+    )
+
     dispatcher.add_handler(start_handler)
     dispatcher.add_handler(help_handler)
+    dispatcher.add_handler(Register_handler)
 
     if WEBHOOK and URL:
         LOGGER.info("Using webhooks.")
