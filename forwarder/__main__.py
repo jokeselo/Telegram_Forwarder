@@ -22,7 +22,7 @@ Hey {}, I'm {}!
 
 I'm a bot used to add Views On All Upcoming Posts Of A Channel.
 
-For Access Click /Register 
+For Access Click /Add
 
 Plan Starting From 15k 
 To obtain a list of plan , use /help.
