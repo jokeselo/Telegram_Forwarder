@@ -30,10 +30,14 @@ To obtain a list of plan , use /help.
 """
 
 PM_HELP_TEXT = """
-Here is a list of plans:
- - 15k : 2k views On All Posts , 100 post daily , 1 month validity.
- - 25k : 5k views On All Posts , 160 Posts Daily, 45 days validity.
+<b>Here is a list of plans:</b>
+
+- 15k : 2k views On All Posts , 100 post daily , 1 month validity.
+
+- 25k : 5k views On All Posts , 160 Posts Daily, 45 days validity.
+
 - 35k : 10k views On All Posts , unlimited Post,30 days validity.
+
 Contact @mhdfajis for payment Details
 """
 
