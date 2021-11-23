@@ -85,7 +85,6 @@ def Add(update: Update, _):
     else:
         message.reply_text(Register_TEXT,
        parse_mode=ParseMode.HTML)
-CommandHandler.register_next_step_handler(message, username)
 
 def main():
     start_handler = CommandHandler(
@@ -102,12 +101,6 @@ def main():
     dispatcher.add_handler(start_handler)
     dispatcher.add_handler(help_handler)
     dispatcher.add_handler(Add_handler)
-
-
-def username(message):
-   try:
-    if len(message.text) == 5:
-       message.reply_text("💹Your Trx wallet set to")
 
 
     if WEBHOOK and URL:
