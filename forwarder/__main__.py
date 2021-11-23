@@ -89,7 +89,6 @@ def Add(update: Update, _):
         message.reply_text(Register_TEXT,
        parse_mode=ParseMode.HTML)
     if message.text == "@":
-  message = update.effective_message
       message.reply_text(
             Username,
             parse_mode=ParseMode.HTML,
