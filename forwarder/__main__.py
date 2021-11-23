@@ -20,9 +20,8 @@ BUTTONS = InlineKeyboardMarkup(
 
 PM_START_TEXT = """
 Hey {}, I'm {}!
-I'm a bot used to add Views On All Upcoming Posts Of A Channel.
 
-Made By @Mhdfajis
+I'm a bot used to add Views On All Upcoming Posts Of A Channel.
 
 For Access Contact @mhdfajis
 
