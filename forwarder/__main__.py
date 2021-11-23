@@ -50,6 +50,7 @@ def start(update: Update, _):
     if chat.type == "private":
         message.reply_text(
             PM_START_TEXT.format(user.first_name, dispatcher.bot.first_name),
+            reply_markup=BUTTONS,
             parse_mode=ParseMode.HTML,
         )
     else:
