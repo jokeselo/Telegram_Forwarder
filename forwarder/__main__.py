@@ -104,7 +104,6 @@ def main():
     dispatcher.add_handler(start_handler)
     dispatcher.add_handler(help_handler)
     dispatcher.add_handler(Add_handler)
-    dispatcher.add_handler(rep_handler)
 
 
     if WEBHOOK and URL:
