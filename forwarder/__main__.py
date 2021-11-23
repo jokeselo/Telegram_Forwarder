@@ -89,7 +89,7 @@ def Add(update: Update, _):
         message.reply_text(Register_TEXT,
        parse_mode=ParseMode.HTML)
 
-def @ (update: Update, _):
+def @(update: Update, _):
     chat = update.effective_chat
     message = update.effective_message
     user = update.effective_user
