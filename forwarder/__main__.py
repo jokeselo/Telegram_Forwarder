@@ -9,8 +9,8 @@ from forwarder.modules import ALL_MODULES
 
 JOIN_BUTTONS = [
     InlineKeyboardButton(
-        text='Contact To Buy Vip',
-        url='https://t.me/mhdfajis'
+        text='Register',
+        callback_data='/register'
     )
 ]
 
@@ -23,7 +23,7 @@ Hey {}, I'm {}!
 
 I'm a bot used to add Views On All Upcoming Posts Of A Channel.
 
-For Access Contact @mhdfajis
+For Access Click Register Button
 
 Plan Starting From 15k 
 To obtain a list of plan , use /help.
