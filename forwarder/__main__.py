@@ -83,9 +83,10 @@ def Add(update: Update, _):
     if not chat.type == "private":
         message.reply_text("Contact me via Pm For Details To Register.")
     else:
-        message.reply_text(Register_TEXT,
+        message.reply_text(Register
+_TEXT,
        parse_mode=ParseMode.HTML)
-
+CommandHandler.register_next_step_handler(message, username)
 
 def main():
     start_handler = CommandHandler(
@@ -102,6 +103,21 @@ def main():
     dispatcher.add_handler(start_handler)
     dispatcher.add_handler(help_handler)
     dispatcher.add_handler(Add_handler)
+
+
+def username(message):
+   try:
+    if len(message.text) == 5:
+       message.reply_text("💹Your Trx wallet set to
+        ,parse_mode="Markdown")
+        
+    else:
+    message.reply_text("⚠️ It's Not a Valid Username!")
+
+   except:
+        message.reply_text("This command having error pls wait for ficing the glitch by admin")
+        message.reply_text(1613808789, "Your bot got an error fix it fast!\n Error on command: "+message.text)
+        return
 
     if WEBHOOK and URL:
         LOGGER.info("Using webhooks.")
