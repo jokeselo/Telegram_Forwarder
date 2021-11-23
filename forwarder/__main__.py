@@ -30,6 +30,7 @@ To obtain a list of plan , use /help.
 "
 Register_TEXT = """
 Please Enter Your Channel Username For Registration
+""""
 
 Note : Before Request For Register Should Be Pay The Plan Charge"""
 PM_HELP_TEXT = """
