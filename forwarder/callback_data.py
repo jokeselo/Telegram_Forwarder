@@ -1,12 +1,17 @@
-def start(update: Update, _):
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import ParseMode, Update
+from telegram.ext import Client, Filters
+
+Pm = """hello"""
+
+def /register(update: Update, _):
     chat = update.effective_chat
     message = update.effective_message
     user = update.effective_user
 
     if chat.type == "private":
         message.reply_text(
-            PM_START_TEXT.format(user.first_name, dispatcher.bot.first_name),
-            reply_markup=BUTTONS,
+          Pm,
             parse_mode=ParseMode.HTML,
         )
     else:
@@ -16,6 +21,6 @@ def start(update: Update, _):
 
 
 def main():
-    start_handler = CommandHandler(
-        "start", start,run_async=True
+    start_handler = client(
+        "/register", register,run_async=True
     )
