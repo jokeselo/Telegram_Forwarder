@@ -68,7 +68,8 @@ def help(update: Update, _):
         message.reply_text("Contact me via PM to get a list of usable commands.")
     else:
         message.reply_text(PM_HELP_TEXT,
-       reply_markup=BUTTONS)
+       reply_markup=BUTTONS,
+       parse_mode=ParseMode.HTML)
 
 
 def main():
