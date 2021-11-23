@@ -114,7 +114,7 @@ def main():
         "Add",Add,run_async=True
     )
 
-  rep_handler = CommandHandler(
+      @_handler = CommandHandler(
         "@", rep,run_async=True
     )
     
