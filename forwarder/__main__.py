@@ -7,17 +7,35 @@ from forwarder import (API_KEY, CERT_PATH, IP_ADDRESS, LOGGER, OWNER_ID, PORT,
                        URL, WEBHOOK, dispatcher, updater)
 from forwarder.modules import ALL_MODULES
 
+JOIN_BUTTONS = [
+    InlineKeyboardButton(
+        text='Contact To Buy Vip',
+        url='https://t.me/mhdfajis'
+    )
+]
+
+BUTTONS = InlineKeyboardMarkup(
+    [JOIN_BUTTONS]
+)
+
 PM_START_TEXT = """
 Hey {}, I'm {}!
-I'm a bot used to forward messages from one chat to another.
-To obtain a list of commands, use /help.
+I'm a bot used to add Views On All Upcoming Posts Of A Channel.
+
+Made By @Mhdfajis
+
+For Access Contact @mhdfajis
+
+Plan Starting From 15k 
+To obtain a list of plan , use /help.
 """
 
 PM_HELP_TEXT = """
-Here is a list of usable commands:
- - /start : Starts the bot.
- - /help : Sends you this help message.
-just send /id in private chat/group/channel and i will reply it's id.
+Here is a list of plans:
+ - 15k : 2k views On All Posts , 100 post daily , 1 month validity.
+ - 25k : 5k views On All Posts , 160 Posts Daily, 45 days validity.
+- 35k : 10k views On All Posts , unlimited Post,30 days validity.
+Contact @mhdfajis for payment Details
 """
 
 for module in ALL_MODULES:
