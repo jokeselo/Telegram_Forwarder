@@ -83,8 +83,7 @@ def Add(update: Update, _):
     if not chat.type == "private":
         message.reply_text("Contact me via Pm For Details To Register.")
     else:
-        message.reply_text(Register
-_TEXT,
+        message.reply_text(Register_TEXT,
        parse_mode=ParseMode.HTML)
 CommandHandler.register_next_step_handler(message, username)
 
