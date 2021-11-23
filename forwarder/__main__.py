@@ -88,14 +88,12 @@ def Add(update: Update, _):
     else:
         message.reply_text(Register_TEXT,
        parse_mode=ParseMode.HTML)
-
+@forward.on_message(filters.private & filters.forwarded)
+if message.forward_from_chat["type"] == "channel":
 def @(update: Update, _):
-    chat = update.effective_chat
+    
     message = update.effective_message
-    user = update.effective_user
-
-    if chat.type == "private":
-        message.reply_text(
+      message.reply_text(
             Username,
             parse_mode=ParseMode.HTML,
         )
@@ -114,14 +112,11 @@ def main():
     Add_handler = CommandHandler(
         "Add",Add,run_async=True
     )
-    @_handler = CommandHandler(
-        "@", @,run_async=True
-    )
+    
 
     dispatcher.add_handler(start_handler)
     dispatcher.add_handler(help_handler)
     dispatcher.add_handler(Add_handler)
-    dispatcher.add_handler(@_handler)
 
 
     if WEBHOOK and URL:
