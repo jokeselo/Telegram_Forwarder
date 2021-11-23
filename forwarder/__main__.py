@@ -89,7 +89,7 @@ def Add(update: Update, _):
         message.reply_text(Register_TEXT,
        parse_mode=ParseMode.HTML)
 @forward.on_message(filters.private & filters.forwarded)
-if message.forward_from_chat
+if update.message.forward_from_chat
   message = update.effective_message
       message.reply_text(
             Username,
