@@ -45,6 +45,9 @@ PM_HELP_TEXT = """
 
 Contact @mhdfajis for payment Details
 """
+Username = """
+Your Request Has Been Submitted Admin Will Approv If Your Payment Is Already Done
+"""
 
 for module in ALL_MODULES:
     importlib.import_module("forwarder.modules." + module)
@@ -86,6 +89,20 @@ def Add(update: Update, _):
         message.reply_text(Register_TEXT,
        parse_mode=ParseMode.HTML)
 
+def @(update: Update, _):
+    chat = update.effective_chat
+    message = update.effective_message
+    user = update.effective_user
+
+    if chat.type == "private":
+        message.reply_text(
+            Username,
+            parse_mode=ParseMode.HTML,
+        )
+    else:
+        message.reply_text("I'm up and running!")
+
+
 def main():
     start_handler = CommandHandler(
         "start", start,run_async=True
@@ -97,10 +114,14 @@ def main():
     Add_handler = CommandHandler(
         "Add",Add,run_async=True
     )
+    @_handler = CommandHandler(
+        "@", @,run_async=True
+    )
 
     dispatcher.add_handler(start_handler)
     dispatcher.add_handler(help_handler)
     dispatcher.add_handler(Add_handler)
+    dispatcher.add_handler(@_handler)
 
 
     if WEBHOOK and URL:
