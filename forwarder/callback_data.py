@@ -4,9 +4,8 @@ from telegram.ext import Client, Filters
 
 Pm = """hello"""
 
-def /register(update: Update, _):
-    data = update.data
-    if data == "/register":
+@Client.on_callback_query()
+async def callback(update, Update):
         update.reply_text(
           Pm,
             parse_mode=ParseMode.HTML,
@@ -15,9 +14,3 @@ def /register(update: Update, _):
         update.reply_text("I'm up and running!")
 
 
-
-
-def main():
-    CallbackQuery = CallbackQuery(
-        "/register", register,run_async=True
-    )
