@@ -50,15 +50,48 @@ def help(update: Update, _):
         message.reply_text(PM_HELP_TEXT)
 
 
-def main():
-    start_handler = CommandHandler(
-        "start", start, filters=Filters.user(OWNER_ID), run_async=True
+        pmst = """Welcome To Fajis Auto Views Adder Bot 
+        this Bot Add Views On Your Post Automatically
+        Buy Vip To Access 
+        
+        Starting Plan From 15k 
+   JOIN_BUTTONS = [
+
+    InlineKeyboardButton(
+
+        text='Contact For Vip',
+
+        url='https://t.me/mhdfajis'
+
     )
-    help_handler = CommandHandler(
-        "help", help, filters=Filters.user(OWNER_ID), run_async=True
-    )
-    dispatcher.add_handler(start_handler)
-    dispatcher.add_handler(help_handler)
+
+]
+
+BUTTONS = InlineKeyboardMarkup(
+
+    [JOIN_BUTTONS]
+
+)
+
+@Client.on_message(filters.private & filters.command(["start"]), group=-1)
+
+async def start(bot, update):
+
+    if update.text == "/start":
+
+        await update.reply_text(
+
+            text=pmst.format(update.from_user.mention),
+
+            reply_markup=BUTTONS,
+
+            disable_web_page_preview=True,
+
+            quote=True
+
+        )     
+        
+
 
     if WEBHOOK and URL:
         LOGGER.info("Using webhooks.")
