@@ -76,7 +76,7 @@ def help(update: Update, _):
        reply_markup=BUTTONS,
        parse_mode=ParseMode.HTML)
 
-def Register(update: Update, _):
+def Add(update: Update, _):
     chat = update.effective_chat
     message = update.effective_message
 
@@ -95,13 +95,13 @@ def main():
         "help", help, run_async=True
     )
 
-Register_handler = CommandHandler(
-        "Register",Register,run_async=True
+    Add_handler = CommandHandler(
+        "Add",Add,run_async=True
     )
 
     dispatcher.add_handler(start_handler)
     dispatcher.add_handler(help_handler)
-    dispatcher.add_handler(Register_handler)
+    dispatcher.add_handler(Add_handler)
 
     if WEBHOOK and URL:
         LOGGER.info("Using webhooks.")
