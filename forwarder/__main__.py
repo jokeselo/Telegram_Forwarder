@@ -29,6 +29,7 @@ To obtain a list of plan , use /help.
 """
 
 Register_TEXT
+"""
 For Registering New Channel Use This Bot 📲 @Register_Fajis_views_Bot
 """
 
